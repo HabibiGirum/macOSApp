@@ -1,0 +1,34 @@
+name: Build and upload pkg installer
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set File Permissions
+        run: chmod a+r background.png
+
+      - name: Build osqueryd Package
+        run: pkgbuild --identifier com.osqueryd.pkg --install-location /usr/local/bin --root ./ osqueryd.pkg
+
+      - name: Build osqueryi Package
+        run: pkgbuild --identifier com.osqueryi.pkg --install-location /usr/local/bin --root ./ osqueryi.pkg
+
+      - name: Create Combined Package
+        run: productbuild --distribution distribution.xml --package-path ./ osquery.pkg
+
+      - name: Upload the Combined Installer as an Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: osquery.pkg
+          path: osquery.pkg
