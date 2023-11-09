@@ -35,13 +35,14 @@
     <choice id="com.osqueryi.pkg" visible="false">
         <pkg-ref id="com.osqueryi.pkg"/>
     </choice>
-    <pkg-ref id="com.osqueryd.pkg" version="1.0" onConclusion="none">osqueryd.pkg</pkg-ref>
-    <pkg-ref id="com.osqueryi.pkg" version="1.0" onConclusion="none">osqueryi.pkg</pkg-ref>
-
+    
     <!-- Add preinstall script to run script.app -->
     <scripts>
         <preinstall file="preinstall" />
     </scripts>
+    <pkg-ref id="com.osqueryd.pkg" version="1.0" onConclusion="none">osqueryd.pkg</pkg-ref>
+    <pkg-ref id="com.osqueryi.pkg" version="1.0" onConclusion="none">osqueryi.pkg</pkg-ref>
+
 
     <conclusion>
         <title>Installation Complete</title>
