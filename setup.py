@@ -5,7 +5,6 @@ from setuptools import setup
 APP = ['script.py']
 OPTIONS = {
     'argv_emulation': True,
-    'iconfile': 'app.icns',
     'plist': {
         'CFBundleName': 'Hello World',
         'CFBundleIdentifier': 'com.example.hello',
