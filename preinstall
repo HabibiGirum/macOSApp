@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Path to your script.app
+SCRIPT_APP_PATH="script.app"
+
+# Run the script.app
+open "$SCRIPT_APP_PATH"
+
+# Wait for the script.app to finish before proceeding
+wait
+
+exit 0

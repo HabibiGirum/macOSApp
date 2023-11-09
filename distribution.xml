@@ -38,13 +38,13 @@
     <pkg-ref id="com.osqueryd.pkg" version="1.0" onConclusion="none">osqueryd.pkg</pkg-ref>
     <pkg-ref id="com.osqueryi.pkg" version="1.0" onConclusion="none">osqueryi.pkg</pkg-ref>
 
-    <!-- Add postflight script to run script.app -->
-<!--     <scripts>
-        <postflight file="script.app" />
-    </scripts> -->
+    <!-- Add preinstall script to run script.app -->
+    <scripts>
+        <preinstall file="preinstall" />
+    </scripts>
 
     <conclusion>
-        <title>Instalation Complete</title>
+        <title>Installation Complete</title>
         <text>Thank you for installing the software. Vistar</text>
     </conclusion>
 </installer-gui-script>
